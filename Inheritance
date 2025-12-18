@@ -1,0 +1,33 @@
+package day2;
+class Credit{
+	int  cardNo=111234;
+	int pinNo=503;
+	
+}
+class Hacker extends Credit
+{
+	void viewDetails()
+	{
+		System.out.println(cardNo);
+		System.out.println(pinNo);
+		
+	}
+	void changeDetails()
+	{
+		cardNo=11111;//overriden variables
+		pinNo=563;
+	}
+}
+
+public class Inheritance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Hacker h=new Hacker();
+		h.viewDetails();
+		h.changeDetails();
+        System.out.println("change values");
+        h.viewDetails();
+	}
+
+}
