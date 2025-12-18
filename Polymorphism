@@ -1,0 +1,47 @@
+package day2;
+
+class Plane
+{
+	void takeoff()
+	{
+		System.out.println(" plane is takingoff");
+		
+	}
+	void fly()
+	{
+		System.out.println(" plane is flying");
+		
+	}
+	void land()
+	{
+		System.out.println(" plane is landing");
+		
+	}
+}
+class CargoPlane extends Plane
+{
+	void fly()
+	{
+		System.out.println(" cargoplane is flying at low height");
+	}
+	void carrycargo()
+	{
+		System.out.println(" cargoplane carries cargo");
+	}
+}
+
+
+public class Polymorphism{
+
+	public static void main(String[] args) {
+		CargoPlane cp=new CargoPlane();
+		cp.fly();
+		cp.land();
+		cp.takeoff();
+		cp.carrycargo();
+		// TODO Auto-generated method stub
+        
+	}
+
+	
+}
