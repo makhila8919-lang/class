@@ -1,0 +1,64 @@
+package day5;
+
+ // a tread used to perform parllel execution in java  
+/*
+ * types of thread : both of which use to implement parallel processing in java depending on priority and importance of task
+ * 
+ * 1.user thread: JVM will wait for all the active user thread to complete their excetion bedore is shutdown itself
+ * 
+ * 2.demon thread :Doesn't get the performance.JVM exit and close the java program even if there is daemon thread running in th background
+ * 
+ * Difference b/w user and daemon thread 
+ * 
+ * **JVM doen't wait gor daemon thread to finish first and foremost difference is that JVM will not for daemon thread to finish their work but it 
+ * will wait any activeuser thread
+ * 
+ *  **JVM it creaates daemon thread 
+ *  another difference between them is than daemon thread mostly created by JVM
+ *   for some garbage collection work on the other hand  user thread is usually created by application for excecuting some task concurrently
+ */
+
+class Demo1 extends Thread{
+	public void run()
+	{
+		for(int i=0;i<=5;i++)
+		{
+			System.out.println("user thread exceuting");
+			try{
+				Thread.sleep(1000);
+			}
+			catch(Exception e){
+				System.out.println("some problem will occurred");
+			}
+		}
+	}
+}
+class Demo2 extends Thread{
+	public void run()
+	{
+		for(int i=0;i<=20;i++)
+		{
+			System.out.println("Daemon  thread exceuting");
+			try{
+				Thread.sleep(1000);
+			}
+			catch(Exception e){
+				System.out.println("some problem will occurred");
+			}
+		}
+	}
+}
+public class Typesofthread {
+
+	public static void main(String[] args) {
+		System.out.println("main() started executing");
+		Demo1 d1=new Demo1();
+		Demo2 d2=new Demo2();
+		d2.setDaemon(true);
+		d1.start();
+		d2.start();
+		System.out.println("main() stopped executing");
+
+	}
+
+}
