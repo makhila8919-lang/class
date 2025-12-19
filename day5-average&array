@@ -1,0 +1,41 @@
+package day5;
+
+class Average extends Thread 
+{
+	void run1()
+	{
+		int sum=0;
+		double average;
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println("the average of numbers ");
+			sum=sum+i;
+		}
+		average=sum/10;
+	}
+}
+class Array extends Thread
+{
+	void implement()
+	{  
+		
+		int arr[]= {1,20,50,15,30};
+		for(int n:arr)
+		{
+			System.out.println(" the square number "+n*n);
+		}
+	}
+}
+public class AverageAndArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Average a=new Average();
+		Array  b=new Array();
+		 b.start();
+		 a.start();
+		
+
+	}
+
+}
