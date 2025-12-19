@@ -1,0 +1,84 @@
+package day5;
+
+class Restarent
+{
+	synchronized void foodorder(String ordername)
+	{
+       String name=Thread.currentThread().getName();
+		System.out.println("Thread waiter:customer has ordered "+ordername);
+		try {
+			wait();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		System.out.println("Thread "+name+"food is delivery to the customer!!");
+	}
+	synchronized void cookedorder( String ordername)
+	{
+		String name=Thread.currentThread().getName();
+		
+		System.out.println("Thread "+name+"chef has received the ordered"+ordername);
+		System.out.println("Thread "+name+"cooking under peocess ");
+			try {
+				Thread.sleep(20000);
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			System.out.println("    ");
+		}
+	synchronized void recived(String ordername)
+	{
+		String name=Thread.currentThread().getName();
+		
+		System.out.println("Thread "+name+"order is ready !!!!"+ordername);
+		System.out.println("Thread "+name+" customer has recived order");
+			try {
+				Thread.sleep(20000);
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			System.out.println("  Thread"+name+" customer has recived order"+ordername);
+		}
+	
+	}
+	
+	
+public class Restatent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Restarent r=new Restarent();
+		String ordername="Briyani";
+		Thread t1=new Thread("customer")
+		{
+		public void run()
+		{
+			r.foodorder(ordername);
+		}
+		};
+		t1.start();
+		Thread t2=new Thread("waiter")
+				{
+				public void run()
+				{
+					r.cookedorder(ordername);
+				}
+				};
+		t2.start();
+		Thread t3=new Thread("cook")
+				
+				{
+					public void run()
+					{
+						r.recived(ordername);
+					}
+					};
+					t3.start();
+      }
+}
