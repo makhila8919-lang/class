@@ -1,0 +1,57 @@
+package day6;
+import java.util.*;
+/*
+ * 
+ */
+class Employee
+{
+	private String empname;
+	private String empdesignation;
+	private String empEmail;
+	public Employee ( String empname,String empdesignation,String empEmail)
+	{
+		super();
+		this.empname=empname;
+		this.empdesignation=empdesignation;
+		this.empEmail= empEmail;
+	}
+     public String getEmpName()
+     {
+    	 return empname;
+     }
+     public String getEmpDestination()
+     {
+    	 return empdesignation;
+     }
+     public String getEmpEmail()
+     {
+    	 return empEmail;
+     }
+	 @Override
+	 public String toString() {
+		return "Employee [empname=" + empname + ", empdesignation=" + empdesignation + ", empEmail=" + empEmail + "]";
+	 }  
+
+}
+
+public class ExampleforLinkedList2 {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee e1=new Employee("akhila","student","akhila@mail.com");
+		Employee e2=new Employee("sri","developer","sri@mail.com");
+		Employee e3=new Employee("tanuja","student","tanuja@mail.com");
+		LinkedList<Employee> ll=new LinkedList<Employee>();
+		ll.add(e1);	
+		ll.add(e2);	
+		ll.add(e3);	
+
+		for(Object i:ll)
+		{
+			System.out.println(i);
+		}
+
+	}
+
+}
