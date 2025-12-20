@@ -1,0 +1,39 @@
+
+package day6;
+import java.util.*;
+
+import java.util.List;
+
+public class ExampleFOrLInkedList {
+
+	public static void main(String[] args) {
+		
+				
+				List<Integer> l=new LinkedList();
+				l.add(32);
+				l.add(32);
+				l.add(03);
+			   l.add(23);
+			   l.add(null);
+			   System.out.println("the List:"+l);
+			   for(Object i:l)
+			   {
+				   System.out.println(i);
+			   }
+			   System.out.println(l.get(0));
+			   System.out.println(l.isEmpty());
+			   System.out.println("------------------------");
+			   LinkedList ll=new LinkedList();
+			   ll.add(10);
+			   ll.add(20);
+			   ll.add("sri");
+			   ll.add("blue");
+			   System.out.println("the List:"+ll);
+			   for(Object i:ll)
+			   {
+				   System.out.println(i);
+			   }
+			   }
+
+		
+}
